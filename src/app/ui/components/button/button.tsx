@@ -10,11 +10,12 @@ export type ButtonProps = Omit<
   ButtonVariantProps;
 
 export function Button(props: ButtonProps) {
-  const { children, fullWidth, size, trigger, invert, type = 'button', variant, ...rest } = props;
+  const { children, fullWidth, size, trigger, invert, type = 'button', variant, disabled, ...rest } = props;
   return (
     <StyledButton
       className={buttonRecipe({ fullWidth, size, invert, trigger, variant })}
       type={type}
+      disabled={disabled}
       {...rest}
     >
       {children}
